@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import { createStore } from './store';
 import { createProduct, getProduct } from './product';
@@ -6,6 +7,7 @@ const app = express()
 const PORT = process.env["PORT"] || 8080;
 
 app.use(express.json())
+app.use(cors())
 
 // Health Check
 app.get('/', (req, res) => {
